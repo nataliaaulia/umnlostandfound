@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Bottom_Navigation</string>
+    <string name="title_home">Home</string>
+    <string name="title_report">Report</string>
+    <string name="title_information">Information</string>
+    <string name="title_profile">Profile</string>
+</resources>
