@@ -11,10 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
- import com.example.bottom_navigation.R;
+import com.example.bottom_navigation.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -43,14 +42,6 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
             mapFragment = SupportMapFragment.newInstance();
             ft.replace(R.id.map, mapFragment).commit();
         }
-        //
-//        final TextView textView = root.findViewById(R.id.text_home);
-//        homeViewModel.getText().observe(this, new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
         mapFragment.getMapAsync(this);
         return root;
     }
@@ -61,7 +52,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
 
         // Add a marker in Sydney and move the camera
         LatLng coffman = new LatLng(44.9728134, -93.2353374);
-        mMap.addMarker(new MarkerOptions().position(coffman).title("Marker in coffman"));
+        mMap.addMarker(new MarkerOptions().position(coffman).title("22")).showInfoWindow();
 
         LatLng umn = new LatLng(44.973086, -93.2370881);
 
