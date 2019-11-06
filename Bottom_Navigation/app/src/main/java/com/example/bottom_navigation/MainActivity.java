@@ -2,29 +2,72 @@ package com.example.bottom_navigation;
 
 import android.os.Bundle;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import android.content.Intent;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+
 
 public class MainActivity extends AppCompatActivity {
+
+    public Button mLogIn;
+    public EditText mEmail, mPassword;
+    public TextView mSignUpText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_report, R.id.navigation_information, R.id.navigation_profile)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
+
+        mLogIn = (Button) findViewById(R.id.login);
+        mEmail = (EditText) findViewById(R.id.email);
+        mPassword = (EditText) findViewById(R.id.password);
+        mSignUpText = (TextView) findViewById(R.id.signuptext);
+
+        mSignUpText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SignUp.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        mLogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                validateInfo(mEmail.getText().toString(), mPassword.getText().toString());
+            }
+        });
+
+
+    }
+
+    public void validateInfo(String userEmail, String userPassword) {
+        if((userEmail.equals("a")) && (userPassword.equals("1"))) {
+            Intent intent = new Intent(MainActivity.this, HomePage.class);
+            startActivity(intent);
+            finish();
+        }
+
+        if (TextUtils.isEmpty(userEmail)) {
+            Toast.makeText(getApplicationContext(), "Enter an email address", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(userPassword)) {
+            Toast.makeText(getApplicationContext(), "Enter a password", Toast.LENGTH_LONG).show();
+        }
+
+//        if(userPassword.length() < 6) {
+//            Toast.makeText(getApplicationContext(), "Password is too short!", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
     }
 
 }
