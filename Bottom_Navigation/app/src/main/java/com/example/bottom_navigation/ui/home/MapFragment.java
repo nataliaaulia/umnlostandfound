@@ -16,6 +16,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PointOfInterest;
 
@@ -24,6 +25,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     private GoogleMap mMap;
 
     SupportMapFragment mapFragment;
+    private Marker marker;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,15 +46,20 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        LatLng coffman = new LatLng(44.9728134, -93.2353374);
-        mMap.addMarker(new MarkerOptions().position(coffman).title("22")).showInfoWindow();
-
-        LatLng umn = new LatLng(44.973086, -93.2370881);
-
+        LatLng coffman = new LatLng(44.9728134,-93.2353374);
+        mMap.addMarker(new MarkerOptions().position(coffman).title("1")).showInfoWindow();
+        //LatLng umn = new LatLng(44.973086, -93.2370881);
         mMap.setOnPoiClickListener(new GoogleMap.OnPoiClickListener() {
-            @Override
+            //@Override
+            int count = 1;
+
             public void onPoiClick(PointOfInterest pointOfInterest) {
-                mMap.addMarker(new MarkerOptions().position(pointOfInterest.latLng).title("22")).showInfoWindow();
+//                for (int i = 1; i < 10000; i++){
+//                    mMap.addMarker(new MarkerOptions().position(pointOfInterest.latLng).title(Integer.toString(i))).showInfoWindow();
+//                }
+                count++;
+                marker = mMap.addMarker(new MarkerOptions().position(pointOfInterest.latLng).title(Integer.toString(count)));
+                marker.setTag(count);
             }
         });
 
