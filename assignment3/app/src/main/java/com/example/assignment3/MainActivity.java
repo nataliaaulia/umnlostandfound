@@ -63,15 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         "Red with Roses",
                         "UMN email: aulia001@umn.edu",
                         R.drawable.beanie_icon));
-
-        productList.add(
-                new Product(
-                        5,
-                        "Beats Headphone",
-                        "Black with a Mickey Mouse logo",
-                        "UMN email: crazyguy@123.com",
-                        R.drawable.headphone_icon));
-
+        
         //creating recyclerview adapter
         ProductAdapter adapter = new ProductAdapter(this, productList);
 
