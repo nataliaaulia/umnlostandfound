@@ -3,6 +3,10 @@ package com.example.assignment3;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import android.content.Intent;
+import android.view.View;
+import android.widget.EditText;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String EXTRA_MESSAGE = "com.example.umnlostandfound";
 
     //a list to store all the products
     List<Product> productList;
@@ -63,11 +68,21 @@ public class MainActivity extends AppCompatActivity {
                         "Red with Roses",
                         "UMN email: aulia001@umn.edu",
                         R.drawable.beanie_icon));
-        
+
         //creating recyclerview adapter
         ProductAdapter adapter = new ProductAdapter(this, productList);
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
     }
+
+    public void sendMessage(View view)
+    {
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        EditText editText = (EditText) findViewById(R.id.button);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+
 }

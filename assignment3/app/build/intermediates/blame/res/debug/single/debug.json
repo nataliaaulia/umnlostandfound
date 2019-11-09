@@ -992,6 +992,10 @@
         "source": "/Users/kunkilee/.gradle/caches/transforms-2/files-2.1/dd439de9a41763d068013efeed69753c/res/drawable/btn_checkbox_checked_mtrl.xml"
     },
     {
+        "merged": "/Users/kunkilee/AndroidStudioProjects/assignment3/app/build/intermediates/res/merged/debug/layout_activity_display_message.xml.flat",
+        "source": "/Users/kunkilee/AndroidStudioProjects/assignment3/app/src/main/res/layout/activity_display_message.xml"
+    },
+    {
         "merged": "/Users/kunkilee/AndroidStudioProjects/assignment3/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "/Users/kunkilee/.gradle/caches/transforms-2/files-2.1/dd439de9a41763d068013efeed69753c/res/drawable-xxhdpi-v4/abc_list_focused_holo.9.png"
     },
