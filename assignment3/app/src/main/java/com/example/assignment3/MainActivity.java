@@ -36,9 +36,8 @@ public class MainActivity extends AppCompatActivity {
                 new Product(
                         1,
                         "Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra)",
-                        "",
-                        4.3,
-                        1000000,
+                        "Silver Laptop, Heavy",
+                        "Kun Ki",
                         R.drawable.laptop_icon));
 
         productList.add(
@@ -46,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
                         2,
                         "Leather Wallet (Brown Colored)",
                         "A size of an elephant",
-                        4.3,
-                        600,
+                        "Logan",
                         R.drawable.wallet_icon));
 
         productList.add(
@@ -55,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
                         3,
                         "iPhone XR",
                         "Silver, 1.35 kg",
-                        4.3,
-                        600,
+                        "Raymond",
                         R.drawable.phone_icon));
 
         //creating recyclerview adapter

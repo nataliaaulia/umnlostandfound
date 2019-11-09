@@ -702,11 +702,9 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
-drawable dellinspiron
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable laptop_icon
-drawable macbook
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -720,7 +718,6 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable phone_icon
-drawable surface
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable wallet_icon
@@ -904,8 +901,7 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
-id textViewPrice
-id textViewRating
+id textViewContactInfo
 id textViewShortDesc
 id textViewTitle
 id time
