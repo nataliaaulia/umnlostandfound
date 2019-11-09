@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                         1,
                         "Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra)",
                         "Silver Laptop, Heavy",
-                        "Kun Ki",
+                        "UMN email : lee02157@umn.edu",
                         R.drawable.laptop_icon));
 
         productList.add(
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                         2,
                         "Leather Wallet (Brown Colored)",
                         "A size of an elephant",
-                        "Logan",
+                        "UMN email : barnh043@umn.edu",
                         R.drawable.wallet_icon));
 
         productList.add(
@@ -53,8 +53,24 @@ public class MainActivity extends AppCompatActivity {
                         3,
                         "iPhone XR",
                         "Silver, 1.35 kg",
-                        "Raymond",
+                        "UMN email: aulia001@umn.edu",
                         R.drawable.phone_icon));
+
+        productList.add(
+                new Product(
+                        4,
+                        "Vans Beanie",
+                        "Red with Roses",
+                        "UMN email: aulia001@umn.edu",
+                        R.drawable.beanie_icon));
+
+        productList.add(
+                new Product(
+                        5,
+                        "Beats Headphone",
+                        "Black with a Mickey Mouse logo",
+                        "UMN email: crazyguy@123.com",
+                        R.drawable.headphone_icon));
 
         //creating recyclerview adapter
         ProductAdapter adapter = new ProductAdapter(this, productList);
