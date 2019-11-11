@@ -20,6 +20,7 @@ public class Repository {
         mAllPlaces = mPlaceDao.getPlaces();
 
         mItemLostDao = db.itemLostDao();
+        mLostItems = mItemLostDao.getLostItems();
     }
 
     public int getPlaceCountByName(String placeName) {
@@ -28,6 +29,10 @@ public class Repository {
 
     public LiveData<List<Place>> getAllPlaces() {
         return mAllPlaces;
+    }
+
+    public LiveData<List<ItemLost>> getLostItems() {
+        return mLostItems;
     }
 
     public void insert (Place place) {

@@ -2,7 +2,6 @@ package com.example.bottom_navigation.ui.home.db;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -64,12 +63,21 @@ public abstract class LostAndFoundDB extends RoomDatabase {
 
         protected Void populateItemLostTable() {
             mItemLostDao.deleteAll();
+            ItemLost item = new ItemLost("name1", "description1", "email1");
+            mItemLostDao.insert(item);
+            item = new ItemLost("name2", "description2", "email2");
+            mItemLostDao.insert(item);
+            item = new ItemLost("name3", "description3", "email3");
+            mItemLostDao.insert(item);
+            item = new ItemLost("name4", "description4", "email4");
+            mItemLostDao.insert(item);
             return null;
         }
 
         @Override
         protected Void doInBackground(final Void... params) {
             populatePlaceTable();
+            populateItemLostTable();
             return null;
         }
     }
