@@ -38,8 +38,8 @@ public class ListFragment extends Fragment {
 
         //getting the recyclerview from xml
         recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(false);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        //recyclerView.setHasFixedSize(false);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
 
         //initializing the productlist
         productList = new ArrayList<>();
@@ -77,6 +77,14 @@ public class ListFragment extends Fragment {
                         "Red with Roses",
                         "UMN email: aulia001@umn.edu",
                         R.drawable.beanie_icon));
+
+//        productList.add(
+//                new Product(
+//                        5,
+//                        "Hoodie",
+//                        "Red with Roses",
+//                        "UMN email: aulia001@umn.edu",
+//                        R.drawable.beanie_icon));
 
         //creating recyclerview adapter
         ProductAdapter adapter = new ProductAdapter(getActivity(), productList);
