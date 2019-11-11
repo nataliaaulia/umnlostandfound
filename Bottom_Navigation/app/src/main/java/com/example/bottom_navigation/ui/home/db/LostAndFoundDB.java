@@ -11,9 +11,10 @@ import androidx.room.RoomDatabase;
 
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {Place.class}, version = 1)
+@Database(entities = {Place.class, ItemLost.class}, version = 1)
 public abstract class LostAndFoundDB extends RoomDatabase {
     public abstract  PlaceDao placeDao();
+    public abstract ItemLostDao itemLostDao();
     private static volatile LostAndFoundDB INSTANCE;
     private static RoomDatabase.Callback sRoomDatabaseCallback =
             new RoomDatabase.Callback(){
@@ -38,25 +39,37 @@ public abstract class LostAndFoundDB extends RoomDatabase {
 
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
 
-        private final PlaceDao mDao;
+        private final PlaceDao mPlaceDao;
+        private final ItemLostDao mItemLostDao;
 
         PopulateDbAsync(LostAndFoundDB db) {
-            mDao = db.placeDao();
+            mPlaceDao = db.placeDao();
+            mItemLostDao = db.itemLostDao();
+        }
+
+        protected Void populatePlaceTable() {
+            mPlaceDao.deleteAll();
+            Place place = new Place("Walter Library", 20);
+            mPlaceDao.insert(place);
+            place = new Place("Frederick R. Weisman", 10);
+            mPlaceDao.insert(place);
+            place = new Place("Vincent Hall", 5);
+            mPlaceDao.insert(place);
+            place = new Place("Malcolm Moos Health", 18);
+            mPlaceDao.insert(place);
+            place = new Place("Northrop", 16);
+            mPlaceDao.insert(place);
+            return null;
+        }
+
+        protected Void populateItemLostTable() {
+            mItemLostDao.deleteAll();
+            return null;
         }
 
         @Override
         protected Void doInBackground(final Void... params) {
-            mDao.deleteAll();
-            Place place = new Place("Walter Library", 20);
-            mDao.insert(place);
-            place = new Place("Frederick R. Weisman", 10);
-            mDao.insert(place);
-            place = new Place("Vincent Hall", 5);
-            mDao.insert(place);
-            place = new Place("Malcolm Moos Health", 18);
-            mDao.insert(place);
-            place = new Place("Northrop", 16);
-            mDao.insert(place);
+            populatePlaceTable();
             return null;
         }
     }
