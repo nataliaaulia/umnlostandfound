@@ -21,19 +21,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.bottom_navigation.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class ListFragment extends AppCompatActivity {
+public class ListFragment extends Fragment {
     public static final String EXTRA_MESSAGE = "com.example.umnlostandfound";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_list);
+        //a list to store all the products
+        List<Product> productList;
+
+        //the recyclerview
+        RecyclerView recyclerView;
+
+        View root = inflater.inflate(R.layout.fragment_list, container, false);
 
         //getting the recyclerview from xml
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(false);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         //initializing the productlist
         productList = new ArrayList<>();
@@ -73,18 +79,18 @@ public class ListFragment extends AppCompatActivity {
                         R.drawable.beanie_icon));
 
         //creating recyclerview adapter
-        ProductAdapter adapter = new ProductAdapter(this, productList);
+        ProductAdapter adapter = new ProductAdapter(getActivity(), productList);
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
 
-        Button mButton = (Button) findViewById(R.id.button);
-        mButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                startActivity(new Intent(ListFragment.this, Report_Form.class));
-            }
-        });
-        return inflater.inflate(R.layout.fragment_list, container, false);
+//        Button mButton = (Button) root.findViewById(R.id.button);
+//        mButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view){
+//                startActivity(new Intent(ListFragment.this, Report_Form.class));
+//            }
+//        });
+        return root;
     }
 }
