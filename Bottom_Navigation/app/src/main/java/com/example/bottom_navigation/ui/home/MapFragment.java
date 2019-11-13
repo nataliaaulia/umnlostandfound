@@ -86,7 +86,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(Marker marker) {
-                ListFragment listFrag = new ListFragment();
+                ListFragment listFrag = new ListFragment(marker.getTag().toString());
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.map, listFrag, "Halo")
                         .addToBackStack(null)
