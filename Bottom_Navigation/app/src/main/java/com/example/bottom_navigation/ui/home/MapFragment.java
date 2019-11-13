@@ -36,7 +36,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_map, container, false);
-        setRetainInstance(true);
         allPlaces = new ArrayList<>();
         allPlaces.add(new Place("Walter Library", 1));
         allPlaces.add(new Place("Frederick R. Weisman", 1));
@@ -88,10 +87,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public void onInfoWindowClick(Marker marker) {
                 ListFragment listFrag = new ListFragment();
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.main_content, listFrag, "Halo")
-                        .addToBackStack("Halo")
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.map, listFrag, "Halo")
+                        .addToBackStack(null)
                         .commit();
+//                getActivity().getSupportFragmentManager().executePendingTransactions();
             }
         });
         mMap.moveCamera(CameraUpdateFactory.newLatLng(coffman));

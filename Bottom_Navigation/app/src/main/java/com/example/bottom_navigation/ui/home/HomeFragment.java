@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,8 +32,50 @@ public class HomeFragment extends Fragment {
         // Setting ViewPager for each Tabs
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         setupViewPager(viewPager);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (position==1) {
+                    Fragment fragment = getActivity().getSupportFragmentManager().
+                            findFragmentByTag("Halo");
+                    if(fragment != null) {
+                        getActivity().getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+                    }
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
         // Set Tabs inside Toolbar
         TabLayout tabs = (TabLayout) view.findViewById(R.id.result_tabs);
+        tabs.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                Fragment fragment = getActivity().getSupportFragmentManager().
+                        findFragmentByTag("Halo");
+                if(fragment != null) {
+                    getActivity().getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+                }
+            }
+        });
         tabs.setupWithViewPager(viewPager);
 
 
