@@ -26,6 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.home.Report_Form"
+            android:parentActivityName=".ui.home.ListFragment" />
     </application>
 
 </manifest>

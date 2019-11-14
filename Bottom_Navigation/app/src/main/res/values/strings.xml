@@ -7,4 +7,21 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name = "items">
+        <item>Phone</item>
+        <item>Wallet</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name = "locations">
+        <item>Memorial Union</item>
+        <item>Keller Hall</item>
+        <item>Nakamura Center</item>
+    </string-array>
+
+    <string name = "foundwhat">What did you find?</string>
+    <string name = "location">Location</string>
+    <string name = "description">Description</string>
+    <string name = "descriptionhint">....</string>
 </resources>

@@ -78,13 +78,6 @@ public class ListFragment extends Fragment {
                         "UMN email: aulia001@umn.edu",
                         R.drawable.beanie_icon));
 
-//        productList.add(
-//                new Product(
-//                        5,
-//                        "Hoodie",
-//                        "Red with Roses",
-//                        "UMN email: aulia001@umn.edu",
-//                        R.drawable.beanie_icon));
 
         //creating recyclerview adapter
         ProductAdapter adapter = new ProductAdapter(getActivity(), productList);
@@ -92,13 +85,16 @@ public class ListFragment extends Fragment {
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
 
-//        Button mButton = (Button) root.findViewById(R.id.button);
-//        mButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view){
-//                startActivity(new Intent(ListFragment.this, Report_Form.class));
-//            }
-//        });
+        Button mButton = (Button) root.findViewById(R.id.button);
+        mButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(getActivity(), Report_Form.class));
+
+
+            }
+        });
+
         return root;
     }
 }
