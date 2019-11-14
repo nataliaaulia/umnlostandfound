@@ -20,7 +20,8 @@
         <item>Nakamura Center</item>
     </string-array>
 
-    <string name = "foundwhat">What did you find?</string>
+    <string name = "loosewhat">What did you loose?</string>
+    <string name = "findwhat" >What did you find?</string>
     <string name = "location">Location</string>
     <string name = "description">Description</string>
     <string name = "descriptionhint">....</string>
