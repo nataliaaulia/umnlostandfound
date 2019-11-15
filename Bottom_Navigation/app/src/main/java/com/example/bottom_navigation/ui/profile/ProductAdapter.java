@@ -5,14 +5,16 @@ package com.example.bottom_navigation.ui.profile;
  */
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.bottom_navigation.R;
 
@@ -64,7 +66,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     class ProductViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewTitle, textViewShortDesc, textViewContactInfo, listItemText;
+        TextView textViewTitle, textViewShortDesc, textViewContactInfo;
         ImageView imageView;
         public ImageView mDeleteImage;
 
@@ -80,8 +82,28 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             mDeleteImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    productList.remove(0);
-                    notifyDataSetChanged();
+                    AlertDialog.Builder alert = new AlertDialog.Builder(mCtx);
+                    alert.setTitle("Delete Listing");
+                    alert.setMessage("Are you sure you want to delete this listing?");
+                    alert.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            productList.remove(0);
+                            notifyDataSetChanged();
+                            Toast toast = Toast.makeText(mCtx, "Successfully deleted listing", Toast.LENGTH_SHORT);
+                            toast.setGravity(Gravity.CENTER, 0, 0);
+                            toast.show();
+                        }
+                    });
+                    alert.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+
+                    AlertDialog dialog = alert.create();
+                    dialog.show();
                 }
             });
         }
