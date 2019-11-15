@@ -1,4 +1,4 @@
-package com.example.bottom_navigation.ui.profile;
+package com.example.bottom_navigation.ui.listItem;
 
 public class Product {
     private int pos;

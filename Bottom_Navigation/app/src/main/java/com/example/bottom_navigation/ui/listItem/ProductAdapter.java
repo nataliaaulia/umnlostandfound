@@ -1,4 +1,4 @@
-package com.example.bottom_navigation.ui.profile;
+package com.example.bottom_navigation.ui.listItem;
 
 /**
  * Created by karanjaswani on 1/12/18.
@@ -29,10 +29,18 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     //we are storing all the products in a list
     private List<Product> productList;
 
+    private Boolean isProfile;
+
     //getting the context and product list with constructor
     public ProductAdapter(Context mCtx, List<Product> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
+    }
+
+    public ProductAdapter(Context mCtx, List<Product> productList, Boolean isProfile) {
+        this.mCtx = mCtx;
+        this.productList = productList;
+        this.isProfile = true;
     }
 
     @Override
@@ -78,6 +86,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             textViewContactInfo = itemView.findViewById(R.id.textViewContactInfo);
             imageView = itemView.findViewById(R.id.imageView);
             mDeleteImage = itemView.findViewById(R.id.deleteButton);
+            if(!isProfile) {
+                mDeleteImage.setVisibility(View.GONE);
+            } else {
+                mDeleteImage.setVisibility(View.VISIBLE);
+            }
 
             mDeleteImage.setOnClickListener(new View.OnClickListener() {
                 @Override
