@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".ui.home.ListFragment"
     android:focusableInTouchMode="true"
     android:background="#ffffff"
     >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listPlaceName"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_weight="1"
-        />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_marginBottom="?attr/actionBarSize"
-        android:layout_below="@+id/listPlaceName"
-        />
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:id="@+id/listPlaceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/listPlaceName"
+            android:layout_marginBottom="?attr/actionBarSize" />
+    </RelativeLayout>
 </RelativeLayout>

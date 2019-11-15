@@ -5,7 +5,6 @@ import com.example.bottom_navigation.ui.listItem.ProductAdapter;
 
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +37,7 @@ public class ListFragment extends Fragment {
             textView.bringToFront();
         } else {
             textView.setVisibility(View.GONE);
+
         }
         List<Product> productList;
 
