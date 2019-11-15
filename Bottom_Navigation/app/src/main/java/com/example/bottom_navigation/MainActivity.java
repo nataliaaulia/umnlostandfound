@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validateInfo(mEmail.getText().toString(), mPassword.getText().toString());
-                Intent intent = new Intent(SignUp.this, HomePage.class);
+                Intent intent = new Intent(MainActivity.this, HomePage.class);
                 startActivity(intent);
                 finish();
             }
