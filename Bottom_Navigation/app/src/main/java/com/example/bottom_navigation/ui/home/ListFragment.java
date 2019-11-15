@@ -5,10 +5,12 @@ import com.example.bottom_navigation.ui.listItem.ProductAdapter;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,18 +30,20 @@ public class ListFragment extends Fragment {
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        View root = inflater.inflate(R.layout.fragment_list, container, false);
-//        if(placeName != null) {
-//            TextView textView = root.findViewById(R.id.textView);
-//            textView.setText(placeName);
-//        }
-//        return root;
+        View root = inflater.inflate(R.layout.fragment_list, container, false);
+        TextView textView = root.findViewById(R.id.listPlaceName);
+        if(placeName != null) {
+            textView.setVisibility(View.VISIBLE);
+            textView.setText(placeName);
+            textView.bringToFront();
+        } else {
+            textView.setVisibility(View.GONE);
+        }
         List<Product> productList;
 
         //the recyclerview
         RecyclerView recyclerView;
 
-        View root = inflater.inflate(R.layout.fragment_list, container, false);
 
         //getting the recyclerview from xml
         recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
