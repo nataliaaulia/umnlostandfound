@@ -1,9 +1,5 @@
 package com.example.bottom_navigation.ui.listItem;
 
-/**
- * Created by karanjaswani on 1/12/18.
- */
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.Gravity;
