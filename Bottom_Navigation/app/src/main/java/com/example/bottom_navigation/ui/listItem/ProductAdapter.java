@@ -31,16 +31,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     private Boolean isProfile;
 
-    //getting the context and product list with constructor
-    public ProductAdapter(Context mCtx, List<Product> productList) {
-        this.mCtx = mCtx;
-        this.productList = productList;
-    }
-
     public ProductAdapter(Context mCtx, List<Product> productList, Boolean isProfile) {
         this.mCtx = mCtx;
         this.productList = productList;
-        this.isProfile = true;
+        this.isProfile = isProfile;
     }
 
     @Override
