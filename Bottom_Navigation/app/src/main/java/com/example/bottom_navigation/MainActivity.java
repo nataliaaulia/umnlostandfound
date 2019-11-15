@@ -42,11 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validateInfo(mEmail.getText().toString(), mPassword.getText().toString());
-<<<<<<< HEAD
                 Intent intent = new Intent(MainActivity.this, HomePage.class);
-=======
-                Intent intent = new Intent(SignUp.this, HomePage.class);
->>>>>>> 3c85fc14281ad4025e261267bcc777c46c4045db
                 startActivity(intent);
                 finish();
             }
@@ -69,14 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(userPassword)) {
             Toast.makeText(getApplicationContext(), "Enter a password", Toast.LENGTH_LONG).show();
-<<<<<<< HEAD
             return;
         }
-
-=======
-            return; 
-        }
->>>>>>> 3c85fc14281ad4025e261267bcc777c46c4045db
     }
 
 }
