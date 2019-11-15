@@ -11,8 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bottom_navigation.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProfileFragment extends Fragment {
 
@@ -23,13 +28,30 @@ public class ProfileFragment extends Fragment {
         profileViewModel =
                 ViewModelProviders.of(this).get(ProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
-        final TextView textView = root.findViewById(R.id.text_profile);
-        profileViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        RecyclerView recyclerView;
+
+        //getting the recyclerview from xml
+        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
+        //recyclerView.setHasFixedSize(false);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
+
+        List<Product> list = new ArrayList<>();
+
+        //adding some items to our list
+        list.add(
+                new Product(
+                        1,
+                        "Apple MacBook Air Core i5 5th Gen",
+                        "Silver Laptop, Heavy",
+                        "UMN email : lee02157@umn.edu",
+                        R.drawable.laptop_icon));
+
+
+        //creating recyclerview adapter
+        ProductAdapter adapter = new ProductAdapter(getActivity(), list);
+
+        //setting adapter to recyclerview
+        recyclerView.setAdapter(adapter);
         return root;
     }
 }
