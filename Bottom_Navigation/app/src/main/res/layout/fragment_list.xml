@@ -20,11 +20,13 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/chipGroup"
+            android:layout_marginTop="7dp"
             android:layout_marginBottom="?attr/actionBarSize" />
 
         <com.google.android.material.chip.ChipGroup
@@ -32,25 +34,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/listPlaceName"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="80dp"
             android:gravity="center"
             app:singleSelection="true"
-            >
+            android:orientation="horizontal">
+
             <com.google.android.material.chip.Chip
                 android:id="@+id/lostChip"
+                style="@style/Widget.MaterialComponents.Chip.Action"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:text="Lost Items"
                 app:checkedIconEnabled="true"
-                style="@style/Widget.MaterialComponents.Chip.Action"/>
+                app:chipMinHeight="80dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/foundChip"
+                style="@style/Widget.MaterialComponents.Chip.Action"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
+                android:layout_marginTop="20dp"
                 android:text="Found Items"
                 app:checkedIconEnabled="true"
-                style="@style/Widget.MaterialComponents.Chip.Action"/>
+                app:chipMinHeight="80dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                />
 
         </com.google.android.material.chip.ChipGroup>
     </RelativeLayout>
