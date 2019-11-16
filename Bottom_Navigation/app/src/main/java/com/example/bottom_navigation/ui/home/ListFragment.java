@@ -57,6 +57,7 @@ public class ListFragment extends Fragment {
             textView.setText(placeName);
             textView.bringToFront();
         } else {
+
             textView.setVisibility(View.GONE);
         }
         if(isCompleteList) {

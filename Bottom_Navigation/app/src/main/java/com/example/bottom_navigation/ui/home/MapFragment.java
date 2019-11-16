@@ -88,7 +88,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             public void onInfoWindowClick(Marker marker) {
                 ListFragment listFrag = new ListFragment(marker.getTag().toString());
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.map, listFrag, "Halo")
+                        .replace(R.id.nav_host_fragment, listFrag, "Halo")
                         .addToBackStack(null)
                         .commit();
 //                getActivity().getSupportFragmentManager().executePendingTransactions();
