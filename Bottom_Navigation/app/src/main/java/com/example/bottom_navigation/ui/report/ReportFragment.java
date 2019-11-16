@@ -26,19 +26,9 @@ public class ReportFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_report, container, false);
 
-        Button btn = (Button) root.findViewById(R.id.lostButton);
-        Button btn2 = (Button) root.findViewById(R.id.foundButton);
+        final Button btn = (Button) root.findViewById(R.id.lostButton);
+        final Button btn2 = (Button) root.findViewById(R.id.foundButton);
 
-
-//        Button mButton = (Button) root.findViewById(R.id.lostButton);
-//        mButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view){
-//                startActivity(new Intent(getActivity(), Report_Form.class));
-//
-//
-//            }
-//        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +38,8 @@ public class ReportFragment extends Fragment {
                 .replace(R.id.report_fragment, lostFrag)
                 .addToBackStack(null)
                 .commit();
+                btn.setVisibility(View.GONE);
+                btn2.setVisibility(View.GONE);
             }
         });
 
