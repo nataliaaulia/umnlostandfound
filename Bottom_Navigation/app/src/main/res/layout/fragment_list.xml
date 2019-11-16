@@ -33,9 +33,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/listPlaceName"
             android:gravity="center"
+            app:singleSelection="true"
             >
             <com.google.android.material.chip.Chip
-                android:id="@+id/male"
+                android:id="@+id/lostChip"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_marginLeft="20dp"
@@ -44,7 +45,7 @@
                 style="@style/Widget.MaterialComponents.Chip.Action"/>
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/female"
+                android:id="@+id/foundChip"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:text="Found Items"

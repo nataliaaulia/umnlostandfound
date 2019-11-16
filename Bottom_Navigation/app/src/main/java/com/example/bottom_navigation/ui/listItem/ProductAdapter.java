@@ -54,6 +54,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.textViewTitle.setText(product.getTitle());
         holder.textViewShortDesc.setText(product.getShortdesc());
         holder.textViewContactInfo.setText(product.getContactinfo());
+        if(product.getItemPlace() != null) {
+            holder.textItemPlace.setVisibility(View.VISIBLE);
+            holder.textItemPlace.setText(product.getItemPlace());
+        }
 
         holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(product.getImage()));
 
@@ -68,13 +72,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     class ProductViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewTitle, textViewShortDesc, textViewContactInfo;
+        TextView textViewTitle, textViewShortDesc, textViewContactInfo, textItemPlace;
         ImageView imageView;
         public ImageView mDeleteImage;
 
         public ProductViewHolder(View itemView) {
             super(itemView);
 
+            textItemPlace = itemView.findViewById(R.id.itemPlace);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
             textViewContactInfo = itemView.findViewById(R.id.textViewContactInfo);
