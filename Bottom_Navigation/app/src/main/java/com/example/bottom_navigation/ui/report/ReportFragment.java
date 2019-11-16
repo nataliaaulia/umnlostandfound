@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.content.Intent;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -28,24 +29,32 @@ public class ReportFragment extends Fragment {
         Button btn = (Button) root.findViewById(R.id.lostButton);
         Button btn2 = (Button) root.findViewById(R.id.foundButton);
 
-        btn.setOnClickListener(new View.OnClickListener(){
+
+//        Button mButton = (Button) root.findViewById(R.id.lostButton);
+//        mButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view){
+//                startActivity(new Intent(getActivity(), Report_Form.class));
+//
+//
+//            }
+//        });
+
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
                 LostFragment lostFrag = new LostFragment();
-                FragmentTransaction ft = getFragmentManager()
                 getActivity().getSupportFragmentManager().beginTransaction()
                 .replace(R.id.report_fragment, lostFrag)
                 .addToBackStack(null)
                 .commit();
             }
         });
-        btn2.setOnClickListener(new View.OnClickListener(){
+
+        btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.report_fragment, new FoundFragment());
-                ft.addToBackStack(null);
-                ft.commit();
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), Report_Form_Found.class));
             }
         });
 
