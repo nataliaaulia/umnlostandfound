@@ -16,7 +16,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="Before making a report, please go through this list to see if the item you are looking for is here."
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

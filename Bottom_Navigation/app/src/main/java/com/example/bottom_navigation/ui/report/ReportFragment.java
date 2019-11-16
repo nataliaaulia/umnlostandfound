@@ -46,7 +46,13 @@ public class ReportFragment extends Fragment {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), Report_Form_Found.class));
+                FoundFragment founFrag = new FoundFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.report_fragment, founFrag)
+                        .addToBackStack(null)
+                        .commit();
+                btn.setVisibility(View.GONE);
+                btn2.setVisibility(View.GONE);
             }
         });
 

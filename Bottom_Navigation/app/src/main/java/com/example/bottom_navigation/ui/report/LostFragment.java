@@ -47,7 +47,8 @@ public class LostFragment extends Fragment {
                         "Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra)",
                         "Silver Laptop, Heavy",
                         "UMN email : lee02157@umn.edu",
-                        R.drawable.laptop_icon));
+                        R.drawable.laptop_icon,
+                        "Northrop"));
 
         productList.add(
                 new Product(
@@ -63,7 +64,8 @@ public class LostFragment extends Fragment {
                         "iPhone XR",
                         "Silver, 1.35 kg",
                         "UMN email: aulia001@umn.edu",
-                        R.drawable.phone_icon));
+                        R.drawable.phone_icon,
+                        "Walter Library"));
 
         productList.add(
                 new Product(
