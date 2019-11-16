@@ -57,6 +57,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         if(product.getItemPlace() != null) {
             holder.textItemPlace.setVisibility(View.VISIBLE);
             holder.textItemPlace.setText(product.getItemPlace());
+        } else {
+            holder.textItemPlace.setVisibility(View.GONE);
         }
 
         holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(product.getImage()));
