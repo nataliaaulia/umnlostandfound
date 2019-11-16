@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validateInfo(mEmail.getText().toString(), mPassword.getText().toString());
+                Intent intent = new Intent(MainActivity.this, HomePage.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -62,12 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(userPassword)) {
             Toast.makeText(getApplicationContext(), "Enter a password", Toast.LENGTH_LONG).show();
+            return; 
         }
-
-//        if(userPassword.length() < 6) {
-//            Toast.makeText(getApplicationContext(), "Password is too short!", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
     }
 
 }
