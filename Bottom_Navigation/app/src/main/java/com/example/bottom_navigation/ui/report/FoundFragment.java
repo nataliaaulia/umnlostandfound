@@ -20,6 +20,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FoundFragment extends Fragment {
+    private Button btn;
+    private Button btn2;
+    FoundFragment(Button btn, Button btn2) {
+        this.btn = btn;
+        this.btn2 = btn2;
+    }
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -88,5 +94,11 @@ public class FoundFragment extends Fragment {
         });
 
         return root;
+    }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        btn.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
     }
 }
