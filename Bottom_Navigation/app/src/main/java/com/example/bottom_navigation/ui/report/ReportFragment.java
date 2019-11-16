@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.content.Intent;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -26,10 +27,30 @@ public class ReportFragment extends Fragment {
         Button btn = (Button) root.findViewById(R.id.lostButton);
         Button btn2 = (Button) root.findViewById(R.id.foundButton);
 
+
+
+
+//        Button mButton = (Button) root.findViewById(R.id.lostButton);
+//        mButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view){
+//                startActivity(new Intent(getActivity(), Report_Form.class));
+//
+//
+//            }
+//        });
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), Report_Form.class));
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), Report_Form_Found.class));
             }
         });
 
