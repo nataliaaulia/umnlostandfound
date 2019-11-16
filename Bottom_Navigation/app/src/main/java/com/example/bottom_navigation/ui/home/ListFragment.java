@@ -4,6 +4,7 @@ import com.example.bottom_navigation.ui.listItem.Product;
 import com.example.bottom_navigation.ui.listItem.ProductAdapter;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,6 +29,9 @@ public class ListFragment extends Fragment {
     ProductAdapter adapter;
     RecyclerView recyclerView;
 
+    public ArrayList<Product> foundItemList;
+    public ArrayList<Product> lostItemList;
+
     ListFragment(String placeName) {
         this.placeName = placeName;
     }
@@ -36,6 +40,14 @@ public class ListFragment extends Fragment {
     }
     ListFragment(Boolean isCompleteList) {
         this.isCompleteList = true;
+    }
+
+    @Override
+    public void onAttach (Context context) {
+        super.onAttach(context);
+        foundItemList = populateFoundItemList();
+        lostItemList = populateLostItemList();
+        Log.i("ListOnActivityCreated", "Fired");
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,14 +73,13 @@ public class ListFragment extends Fragment {
 
         Chip lostChip = root.findViewById(R.id.lostChip);
         Chip foundChip = root.findViewById(R.id.foundChip);
-//        productList = populateLostItemList();
+
 
         //creating recyclerview adapter
         adapter = new ProductAdapter(getActivity(), populateLostItemList(), false);
         foundChip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("CHIP ONCLICK", "found");
 //                productList = populateFoundItemList();
                 adapter = new ProductAdapter(getActivity(), populateFoundItemList(), false);
                 recyclerView.setAdapter(adapter);
@@ -77,7 +88,6 @@ public class ListFragment extends Fragment {
         lostChip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("CHIP ONCLICK", "lost");
 //                productList = populateLostItemList();
                 adapter = new ProductAdapter(getActivity(), populateLostItemList(), false);
                 recyclerView.setAdapter(adapter);
