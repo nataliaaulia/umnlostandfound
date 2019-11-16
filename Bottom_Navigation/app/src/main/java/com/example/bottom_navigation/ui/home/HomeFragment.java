@@ -85,10 +85,9 @@ public class HomeFragment extends Fragment {
 
     private void setupViewPager(ViewPager viewPager) {
 
-
         Adapter adapter = new Adapter(getChildFragmentManager());
         adapter.addFragment(new MapFragment(), "Map");
-        adapter.addFragment(new ListFragment(), "List");
+        adapter.addFragment(new ListFragment(true), "List");
         viewPager.setAdapter(adapter);
     }
 

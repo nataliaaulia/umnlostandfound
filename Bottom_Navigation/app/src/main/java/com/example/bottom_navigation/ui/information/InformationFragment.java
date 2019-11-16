@@ -19,19 +19,18 @@ public class InformationFragment extends Fragment {
 
     View rootView;
     ExpandableListView lv;
-    private String[] groups;
+    private String[] steps;
     private String[][] children;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        groups = new String[] { "Test Header 1", "Test Header 2", "Test Header 3", "Test Header 4" };
+        steps = new String[] { "Retracing Your Steps", "Getting Help Looking for the Item", "Keeping Yourself from Losing Things in the Future" };
 
         children = new String [][] {
-                { "s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." },
-                { "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of comes from a line in section 1.10.32." },
-                { "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)." },
-                { "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." }
+                { "Determine the last time you saw the item. It’s probably obvious, but the first step in tracking down the thing you’ve lost is picturing where you last had it. Go back to the place where you last saw the item and see if it's there. Another thing that might help is to walk through all of the locations you’ve been since you lost the item. When you remember the last time you saw your missing item, you’ll want to go back to all of the spots you’ve been since you last had it." },
+                { "Ask friends, coworkers, and/or family members. Sometimes, you may think you’ve lost something when someone else just borrowed or moved it. Ask anyone who’s been around the item if they’ve seen it or know where it is. Please also try to visit the nearest lost and found office and check if they keep your lost item for you. If your item isn’t in the lost-and-found yet, leave your contact info. That way, they can get in touch with you if it does show up."},
+                { "Be consciously aware as you go through your daily routine. In addition to that, keep your home and work areas uncluttered and have specific spots to store items. The easiest way to keep from losing stuff is having certain spots where you put your items at the end of the day. " },
         };
     }
 
@@ -47,7 +46,7 @@ public class InformationFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         lv = (ExpandableListView) view.findViewById(R.id.expandableListView);
-        lv.setAdapter(new ExpandableListAdapter(groups, children));
+        lv.setAdapter(new ExpandableListAdapter(steps, children));
         lv.setGroupIndicator(null);
 
     }
