@@ -15,29 +15,39 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bottom_navigation.R;
+import com.google.android.material.chip.ChipGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListFragment extends Fragment {
     String placeName;
+    Boolean isCompleteList = false;
     ListFragment(String placeName) {
         this.placeName = placeName;
     }
     ListFragment() {
 
     }
+    ListFragment(Boolean isCompleteList) {
+        this.isCompleteList = true;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_list, container, false);
         TextView textView = root.findViewById(R.id.listPlaceName);
+        ChipGroup chipGroup = root.findViewById(R.id.chipGroup);
         if(placeName != null) {
             textView.setVisibility(View.VISIBLE);
             textView.setText(placeName);
             textView.bringToFront();
         } else {
             textView.setVisibility(View.GONE);
-
+        }
+        if(isCompleteList) {
+            chipGroup.setVisibility(View.VISIBLE);
+        } else {
+            chipGroup.setVisibility(View.GONE);
         }
         List<Product> productList;
 
