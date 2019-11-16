@@ -1,9 +1,11 @@
 package com.example.bottom_navigation.ui.profile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -51,6 +53,15 @@ public class ProfileFragment extends Fragment {
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
+
+        Button mEditProfile = root.findViewById(R.id.editButton);
+        mEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileFragment.this.getActivity(), EditProfile.class);
+                startActivity(intent);
+            }
+        });
         return root;
     }
 }
