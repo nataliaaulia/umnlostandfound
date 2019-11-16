@@ -25,7 +25,6 @@ import java.util.ArrayList;
 public class ListFragment extends Fragment {
     String placeName;
     Boolean isCompleteList = false;
-//    private ArrayList<Product> productList;
     ProductAdapter adapter;
     RecyclerView recyclerView;
 
@@ -47,7 +46,6 @@ public class ListFragment extends Fragment {
         super.onAttach(context);
         foundItemList = populateFoundItemList();
         lostItemList = populateLostItemList();
-        Log.i("ListOnActivityCreated", "Fired");
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -76,12 +74,12 @@ public class ListFragment extends Fragment {
 
 
         //creating recyclerview adapter
-        adapter = new ProductAdapter(getActivity(), populateLostItemList(), false);
+        adapter = new ProductAdapter(getActivity(), lostItemList, false);
         foundChip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                productList = populateFoundItemList();
-                adapter = new ProductAdapter(getActivity(), populateFoundItemList(), false);
+                adapter = new ProductAdapter(getActivity(), foundItemList, false);
                 recyclerView.setAdapter(adapter);
             }
         });
@@ -89,7 +87,7 @@ public class ListFragment extends Fragment {
             @Override
             public void onClick(View v) {
 //                productList = populateLostItemList();
-                adapter = new ProductAdapter(getActivity(), populateLostItemList(), false);
+                adapter = new ProductAdapter(getActivity(), lostItemList, false);
                 recyclerView.setAdapter(adapter);
             }
         });

@@ -1,6 +1,8 @@
 package com.example.bottom_navigation.ui.profile;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,26 +18,26 @@ import com.example.bottom_navigation.ui.listItem.Product;
 import com.example.bottom_navigation.ui.listItem.ProductAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ProfileFragment extends Fragment {
 
     private ProfileViewModel profileViewModel;
+    public static ArrayList<Product> productList;
+    ProductAdapter adapter;
+    RecyclerView recyclerView;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        profileViewModel =
-                ViewModelProviders.of(this).get(ProfileViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_profile, container, false);
-        RecyclerView recyclerView;
+    @Override
+    public void onAttach(Context ctx) {
+        super.onAttach(ctx);
+        this.productList = populateProductList();
+    }
 
-        //getting the recyclerview from xml
-        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
-        //recyclerView.setHasFixedSize(false);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
+    public ArrayList<Product> getProductList() {
+        return this.productList;
+    }
 
-        List<Product> list = new ArrayList<>();
-
+    private ArrayList<Product> populateProductList() {
+        ArrayList<Product> list = new ArrayList<>();
         //adding some items to our list
         list.add(
                 new Product(
@@ -44,12 +46,34 @@ public class ProfileFragment extends Fragment {
                         "Silver Laptop, Heavy",
                         "UMN email : lee02157@umn.edu",
                         R.drawable.laptop_icon));
+        list.add(
+                new Product(
+                        1,
+                        "Apple MacBook Air Core i5 5th Gen",
+                        "Silver Laptop, Heavy",
+                        "UMN email : lee02157@umn.edu",
+                        R.drawable.laptop_icon));
+        list.add(
+                new Product(
+                        1,
+                        "Apple MacBook Air Core i5 5th Gen",
+                        "Silver Laptop, Heavy",
+                        "UMN email : lee02157@umn.edu",
+                        R.drawable.laptop_icon));
+        return list;
+    }
 
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        profileViewModel =
+                ViewModelProviders.of(this).get(ProfileViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        //creating recyclerview adapter
-        ProductAdapter adapter = new ProductAdapter(getActivity(), list, true);
+        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
 
-        //setting adapter to recyclerview
+        adapter = new ProductAdapter(getActivity(), productList, true);
+
         recyclerView.setAdapter(adapter);
         return root;
     }
