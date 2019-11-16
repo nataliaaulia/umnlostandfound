@@ -1,9 +1,11 @@
 package com.example.bottom_navigation.ui.report;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -77,6 +79,13 @@ public class LostFragment extends Fragment {
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
+        Button reportButton = root.findViewById(R.id.LostReportButton);
+        reportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), Report_Form.class));
+            }
+        });
         return root;
     }
 
