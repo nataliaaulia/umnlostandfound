@@ -1,6 +1,7 @@
 package com.example.bottom_navigation.ui.report;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,14 +16,14 @@ import com.example.bottom_navigation.ui.listItem.Product;
 import com.example.bottom_navigation.ui.profile.ProfileFragment;
 
 public class Report_Form extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    String itemType;
+    static String itemType;
     int image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report__form);
 
-        Spinner spinner = findViewById(R.id.spinner);
+        final Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.items, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -30,12 +31,13 @@ public class Report_Form extends AppCompatActivity implements AdapterView.OnItem
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 itemType = "";
+                Log.i("item", Integer.toString(position));
                 switch(position) {
-                    case 0:
+                    case 1:
                         itemType = "Phone";
                         image = R.drawable.phone_icon;
                         break;
-                    case 1:
+                    case 2:
                         itemType = "Wallet";
                         image =  R.drawable.wallet_icon;
                         break;
@@ -62,13 +64,6 @@ public class Report_Form extends AppCompatActivity implements AdapterView.OnItem
                 finish();
             }
         });
-
-//        Spinner spinner2 = findViewById(R.id.spinner2);
-//        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.locations, android.R.layout.simple_spinner_item);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinner2.setAdapter(adapter2);
-//        spinner2.setOnItemSelectedListener(this);
-
     }
 
     @Override
