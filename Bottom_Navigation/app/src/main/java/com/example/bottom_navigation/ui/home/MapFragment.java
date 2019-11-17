@@ -89,7 +89,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 ListFragment listFrag = new ListFragment(marker.getTag().toString());
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_host_fragment, listFrag, "Halo")
-                        .addToBackStack(null)
+                        .addToBackStack("Halo")
                         .commit();
 //                getActivity().getSupportFragmentManager().executePendingTransactions();
             }

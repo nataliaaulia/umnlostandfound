@@ -6,21 +6,20 @@
     android:focusableInTouchMode="true"
     android:background="#ffffff"
     >
+    <TextView
+        android:id="@+id/listPlaceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textStyle="bold"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="50dp">
-        <TextView
-            android:id="@+id/listPlaceName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:textStyle="bold"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
@@ -33,7 +32,6 @@
             android:id="@+id/chipGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/listPlaceName"
             android:layout_marginTop="12dp"
             android:layout_marginLeft="80dp"
             android:gravity="center"
