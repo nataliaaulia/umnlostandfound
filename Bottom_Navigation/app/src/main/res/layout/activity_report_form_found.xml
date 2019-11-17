@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/itemTypeSpinner"
         android:layout_width="322dp"
         android:layout_height="33dp"
         android:layout_marginStart="24dp"
@@ -50,7 +50,7 @@
         tools:text="Location : " />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/locationSpinner"
         android:layout_width="322dp"
         android:layout_height="33dp"
         android:background="@drawable/textview_border"
@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="0.23" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/descEditText"
         android:layout_width="336dp"
         android:layout_height="52dp"
         android:layout_marginTop="252dp"
@@ -79,7 +79,7 @@
         app:layout_constraintVertical_bias="0.002" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="224dp"
@@ -92,7 +92,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/reportButtonFound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
@@ -107,21 +107,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.992" />
-
-    <TextView
-        android:id="@+id/mytext"
-        android:layout_width="213dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="316dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:gravity="center"
-        android:text=''
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
