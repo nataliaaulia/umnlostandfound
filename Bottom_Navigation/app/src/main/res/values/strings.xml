@@ -10,12 +10,14 @@
 
 
     <string-array name = "items">
+        <item></item>
         <item>Phone</item>
         <item>Wallet</item>
         <item>Others</item>
     </string-array>
 
     <string-array name = "locations">
+        <item></item>
         <item>Memorial Union</item>
         <item>Keller Hall</item>
         <item>Nakamura Center</item>
@@ -24,6 +26,7 @@
     <string name = "loosewhat">What did you loose?</string>
     <string name = "findwhat" >What did you find?</string>
     <string name = "location">Location</string>
+    <string name = "others">If others, please specify</string>
     <string name = "description">Description</string>
-    <string name = "descriptionhint">....</string>
+    <string name = "descriptionhint">(MAX 100 Characters)</string>
 </resources>
