@@ -13,28 +13,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
+        android:textSize="15dp"
+        android:fontFamily="serif"
         android:text="Before making a report, please go through this list to see if the item you are looking for is here."
-        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFound"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
     <TextView
         android:id="@+id/textView6Found"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_gravity="center"
-        android:text="Did not find what you were looking for?"
+        android:text="Don't find what you're looking for?"
+        android:textSize="15dp"
+        android:fontFamily="serif"
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <Button
         android:id="@+id/FoundReportButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="181dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
-        android:text="Make Report" />
+        android:text="Make Report"
+        android:textSize="15dp"
+        android:textColor="@color/gold"/>
 </LinearLayout>
