@@ -66,6 +66,14 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        Button mEditProfile = root.findViewById(R.id.editButton);
+        mEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileFragment.this.getActivity(), EditProfile.class);
+                startActivity(intent);
+            }
+        });
         return root;
     }
 }
