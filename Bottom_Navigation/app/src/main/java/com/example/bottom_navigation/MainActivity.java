@@ -52,11 +52,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void validateInfo(String userEmail, String userPassword) {
-        if((userEmail.equals("a")) && (userPassword.equals("1"))) {
-            Intent intent = new Intent(MainActivity.this, HomePage.class);
+//        if((userEmail.equals("a")) && (userPassword.equals("1"))) {
+//            Intent intent = new Intent(MainActivity.this, HomePage.class);
+//            startActivity(intent);
+//            finish();
+//        }
+        Intent intent = new Intent(MainActivity.this, HomePage.class);
             startActivity(intent);
-            finish();
-        }
 
         if (TextUtils.isEmpty(userEmail)) {
             Toast.makeText(getApplicationContext(), "Enter an email address", Toast.LENGTH_LONG).show();

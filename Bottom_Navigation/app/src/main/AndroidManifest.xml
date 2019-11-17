@@ -26,6 +26,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.report.Report_Form"
+            android:parentActivityName=".ui.report.ReportFragment" />
+        <activity
+            android:name=".ui.report.Report_Form_Found"
+            android:parentActivityName=".ui.report.ReportFragment" />
+
     </application>
 
 </manifest>
