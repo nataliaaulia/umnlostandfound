@@ -16,7 +16,6 @@ import com.example.bottom_navigation.ui.profile.ProfileFragment;
 
 public class Report_Form extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     String itemType;
-    static String description;
     int image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,20 +49,13 @@ public class Report_Form extends AppCompatActivity implements AdapterView.OnItem
         });
 
         final EditText descriptionField = findViewById(R.id.editText);
-        descriptionField.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    description = descriptionField.getText().toString();
-                }
-            }
-        });
 
         Button reportButton = findViewById(R.id.reportButton);
         reportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Product toAdd = new Product(2, itemType, description, "", image);
+                String description = descriptionField.getText().toString();
+                Product toAdd = new Product(2, itemType, description, null, image);
                 ProfileFragment profileFrag = new ProfileFragment();
                 profileFrag.getProductList().add(toAdd);
                 Toast.makeText(getApplicationContext(), "Successfully created report!", Toast.LENGTH_LONG).show();

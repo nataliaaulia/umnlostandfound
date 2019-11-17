@@ -49,7 +49,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         //binding the data with the viewholder views
         holder.textViewTitle.setText(product.getTitle());
         holder.textViewShortDesc.setText(product.getShortdesc());
-        holder.textViewContactInfo.setText(product.getContactinfo());
+        if (product.getContactinfo() !=null) {
+            holder.textViewContactInfo.setText(product.getContactinfo());
+        } else {
+            holder.textViewContactInfo.setVisibility(View.GONE);
+        }
         if(product.getItemPlace() != null) {
             holder.textItemPlace.setVisibility(View.VISIBLE);
             holder.textItemPlace.setText(product.getItemPlace());

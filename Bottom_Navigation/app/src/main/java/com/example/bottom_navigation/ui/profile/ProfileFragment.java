@@ -44,21 +44,7 @@ public class ProfileFragment extends Fragment {
                         1,
                         "Apple MacBook Air Core i5 5th Gen",
                         "Silver Laptop, Heavy",
-                        "UMN email : lee02157@umn.edu",
-                        R.drawable.laptop_icon));
-        list.add(
-                new Product(
-                        1,
-                        "Apple MacBook Air Core i5 5th Gen",
-                        "Silver Laptop, Heavy",
-                        "UMN email : lee02157@umn.edu",
-                        R.drawable.laptop_icon));
-        list.add(
-                new Product(
-                        1,
-                        "Apple MacBook Air Core i5 5th Gen",
-                        "Silver Laptop, Heavy",
-                        "UMN email : lee02157@umn.edu",
+                        null,
                         R.drawable.laptop_icon));
         return list;
     }
