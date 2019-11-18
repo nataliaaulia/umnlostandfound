@@ -67,13 +67,23 @@
             android:layout_centerHorizontal="true"
             />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/currentListing"
+            android:layout_marginTop="300dp"
+            android:fontFamily="serif"
+            android:textSize="20dp"
+            android:textColor="@color/maroon"
+            android:layout_marginLeft="10dp"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="wrap_content"
             android:layout_height="250dp"
             android:layout_below="@+id/editButton"
-            android:layout_marginTop="8dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:layout_marginBottom="?attr/actionBarSize"/>
+            android:layout_marginTop="62dp"
+            android:layout_marginBottom="?attr/actionBarSize"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </RelativeLayout>

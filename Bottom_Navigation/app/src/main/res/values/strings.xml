@@ -29,4 +29,5 @@
     <string name = "others">If others, please specify</string>
     <string name = "description">Description</string>
     <string name = "descriptionhint">(MAX 100 Characters)</string>
+    <string name = "currentListing"><u>Current Listing</u></string>
 </resources>
