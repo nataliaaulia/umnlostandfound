@@ -25,12 +25,19 @@ public class InformationFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        steps = new String[] { "Retracing Your Steps", "Getting Help Looking for the Item", "Keeping Yourself from Losing Things in the Future" };
+        steps = new String[] { "Retracing Your Steps", "Getting Help Looking for the Item", "Keeping Yourself from Losing Things in the Future", "Lost and Found offices on campus" };
 
         children = new String [][] {
-                { "Determine the last time you saw the item. It’s probably obvious, but the first step in tracking down the thing you’ve lost is picturing where you last had it. Go back to the place where you last saw the item and see if it's there. Another thing that might help is to walk through all of the locations you’ve been since you lost the item. When you remember the last time you saw your missing item, you’ll want to go back to all of the spots you’ve been since you last had it." },
-                { "Ask friends, coworkers, and/or family members. Sometimes, you may think you’ve lost something when someone else just borrowed or moved it. Ask anyone who’s been around the item if they’ve seen it or know where it is. Please also try to visit the nearest lost and found office and check if they keep your lost item for you. If your item isn’t in the lost-and-found yet, leave your contact info. That way, they can get in touch with you if it does show up."},
-                { "Be consciously aware as you go through your daily routine. In addition to that, keep your home and work areas uncluttered and have specific spots to store items. The easiest way to keep from losing stuff is having certain spots where you put your items at the end of the day. " },
+                { "1. Determine the last time you saw the item. It’s probably obvious, but the first step in tracking down the thing you’ve lost is picturing where you last had it.\n" +
+                        "\n2. Go back to the place where you last saw the item and see if it's there. Another thing that might help is to walk through all of the locations you’ve been since you lost the item. When you remember the last time you saw your missing item, you’ll want to go back to all of the spots you’ve been since you last had it." },
+                { "1. Ask friends, coworkers, and/or family members. Sometimes, you may think you’ve lost something when someone else just borrowed or moved it.\n" +
+                        "\n2. Ask anyone who’s been around the item if they’ve seen it or know where it is.\n" +
+                        "\n3. Please also try to visit the nearest lost and found office and check if they keep your lost item for you. If your item isn’t in the lost-and-found yet, leave your contact info. That way, they can get in touch with you if it does show up."},
+                { "1. Be consciously aware as you go through your daily routine.\n" +
+                        "\n2. In addition to that, keep your home and work areas uncluttered and have specific spots to store items. The easiest way to keep from losing stuff is having certain spots where you put your items at the end of the day. " },
+                { "1. Coffman Memorial Union - 612-625-5000\n" +
+                        "\n2. McNamara Alumni Center - 612-624-2323\n " +
+                        "\n3. Keller Hall - 612-625-5000 "}
         };
     }
 
